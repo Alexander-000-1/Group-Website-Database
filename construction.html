@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Construction</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+    <!-- sticky header with nav links and page title -->
+    <div class="headerContainer">
+        <div class="dropdownContainer">
+            <button>Pages</button>
+            <div class="dropdownContent">
+                <a href="index.html">Home</a>
+                <a href="waterPoint.html">Water Point</a>
+                <a href="donorRecords.html">Donor Records</a>
+                <a href="maintenanceReport.html">Maintenance Report</a>
+                <a href="construction.html">Construction</a>
+                <a href="community.html">Community</a>
+            </div>
+        </div>
+        <h1>Construction</h1>
+    </div>
+
+
+    <!-- main content area -->
+    <div class="pageContentContainer">
+        <hr>
+        <p>This page provides an overview of water point construction projects, including project status, site location,
+            and completion progress.</p>
+        <hr>
+        <!-- active projects section -->
+        <h2>Active Projects</h2>
+        <p>The table below shows all currently active construction projects, including the project name and the
+            percentage of the budget that has been used so far.</p>
+
+        <!-- banner message shown if there are no active projects -->
+        <p id="activeBanner"></p>
+
+        <!-- scrollable table populated by js -->
+        <div class="tableWrapper">
+            <table id="activeProjectsTable">
+                <thead>
+                    <tr>
+                        <th>Active</th>
+                        <th>Project Name</th>
+                        <th>Budget Used (%)</th>
+                    </tr>
+                </thead>
+                <tbody id="activeProjectsTableBody">
+                </tbody>
+            </table>
+        </div>
+
+        <!-- add new project form -->
+        <h3>Add New Project</h3>
+        <div class="formRow">
+            <label for="startDate">Start Date:</label>
+            <input type="date" id="startDate">
+        </div>
+
+
+        <!-- date inputs -->
+        <div class="formRow">
+            <label for="endDate">End Date:</label>
+            <input type="date" id="endDate">
+        </div>
+
+        <!-- budget input -->
+        <div class="formRow">
+            <label for="budget">Budget (£):</label>
+            <input type="number" id="budget" placeholder="Enter budget">
+        </div>
+
+        <!-- community dropdown populated by js -->
+        <div class="formRow">
+            <label for="communityId">Community:</label>
+            <select id="communityId">
+                <option value="">Select community</option>
+            </select>
+        </div>
+
+        <!-- pump type dropdown -->
+        <div class="formRow">
+            <label for="pointType">Pump Type:</label>
+            <select id="pointType">
+                <option value="">Select type</option>
+                <option value="Borehole">Borehole</option>
+                <option value="Hand Pump">Hand Pump</option>
+                <option value="Solar Pump">Solar Pump</option>
+                <option value="Rope Pump">Rope Pump</option>
+                <option value="Diesel Pump">Diesel Pump</option>
+            </select>
+        </div>
+
+
+
+        <!-- submit button and confirmation message -->
+        <button id="submitButton" onclick="addProject()">Add Project</button>
+        <p id="constructionMessage"></p>
+
+
+
+        <hr>
+        <!-- completed projects section -->
+        <h2>Completed Projects</h2>
+        <p>The table below shows all completed construction projects, including the project name and the total time
+            taken to complete.</p>
+
+        <!-- banner message shown if there are no completed projects -->
+        <p id="completedBanner"></p>
+
+
+        <!-- scrollable table populated by js -->
+        <div class="tableWrapper">
+            <table id="completedProjectsTable">
+                <thead>
+                    <tr>
+                        <th>Completed</th>
+                        <th>Project Name</th>
+                        <th>Time Taken (Days)</th>
+                    </tr>
+                </thead>
+                <tbody id="completedProjectsTableBody">
+                </tbody>
+            </table>
+        </div>
+        <!-- end of main page content -->
+
+
+        <!-- footer with contact info and social links -->
+    </div>
+    <footer>
+        <div class="footerContainer">
+            <div class="footerTop">
+                <div class="footerLinks">
+                    <p>info@wateraid.org</p>
+                    <p>+44 (0)20 7793 4500</p>
+                </div>
+
+                <div class="footerSocialMedia">
+                    <p>Follow us:</p>
+                    <a href="https://www.facebook.com/wateraid" class="fa fa-facebook"></a>
+                    <a href="https://www.twitter.com/wateraid" class="fa fa-twitter"></a>
+                    <a href="https://www.instagram.com/wateraid" class="fa fa-instagram"></a>
+                </div>
+            </div>
+
+            <div class="footerBottom">
+                <p>Designed by Group 067</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- main js file for this page -->
+    <script src="js/constructionJs.js"></script>
+    <script src="js/myJs.js"></script>
+</body>
+
+</html>

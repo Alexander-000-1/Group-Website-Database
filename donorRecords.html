@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Donor Records</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/donorStyle.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+
+    <body>
+
+        <!--Page Header and pages drop down-->
+        <div class="headerContainer">
+            <div class="dropdownContainer">
+                <button>Pages</button>
+                <div class="dropdownContent">
+                    <a href="index.html">Home</a>
+                    <a href="waterPoint.html">Water Point</a>
+                    <a href="donorRecords.html">Donor Records</a>
+                    <a href="maintenanceReport.html">Maintenance Report</a>
+                    <a href="construction.html">Construction</a>
+                    <a href="community.html">Community</a>
+                </div>
+            </div>
+            <h1>Donor Records</h1>
+        </div>
+
+        <!--Container for the page content-->
+        <div class="pageContentContainer">
+
+            <!--Form to add a new donor record. Satisfies CRUD operation Create-->
+            <div class="addDonorForm">
+                <h2>Add a Donor Record</h2>
+                <p>Enter Donation amount below and submit to insert a new row into the table.</p>
+
+                <form id="donationForm">
+                    <div class="formRow">
+                        <label for="amount">Donation Amount (GBP):</label>
+                        <input type="number" id="amount" required>
+                    </div>
+                    <button type="submit" id="submitButton">Submit</button>
+                </form>
+                <hr>
+                <div id="message" class="message"></div>
+            </div>
+
+                <!--Contains the donor table. Satisfies CRUD operation Read-->
+                <div class="donorTableContainer">
+                    <h2>Donor Records</h2>
+                    <p>View Records:</p>
+                    <div class="donorTableOutput">
+                        <div id="tableOutput"><p>Loading donor records...</p></div>
+                    </div>
+                </div>
+
+                <!--Edit Popup to satisfy CRUD operations Update and Delete-->
+                <div id="editPopup" class="edit-popup">
+                    <h3>Edit Donation Amount</h3>
+
+                    <form id="editForm">
+                        <input type="hidden" id="editDonationId">
+
+                        <label>Amount (GBP):</label>
+                        <input type="number" id="editAmount" required>
+
+                        <button type="submit" class="save-btn">Submit</button>
+                        <button type="button" id="cancelEdit" class="cancel-btn">Cancel</button>
+                    </form>
+                </div>
+
+                <hr>
+                
+                <!--Report and chart section-->
+                <div class="reportAndChartWrapper">
+                    <div class="report">
+                        <h2>Reports</h2>
+                        <div class="dropdown">
+                            <p>Select a <button>Report</button></p>
+                            <div class="dropdownContent">
+                                <button class="reportBtn" data-report="total">Total Donations</button>
+                                <button class="reportBtn" data-report="highest">Highest Donation</button>
+                                <button class="reportBtn" data-report="impact">Donor Impact</button>
+                                <button class="reportBtn" data-report="perCountry">Donations Received per Country</button>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div id="reportOutput"><p>Waiting for Selection...</p></div>
+                </div>
+
+            <div class="chartContainer">
+                <div id="chartMessage" class="message"></div>
+                <div class="chart-panel">
+                    <div class="chart-wrapper">
+                        <!-- Chart.js draws the bar chart inside this canvas element. -->
+                        <canvas id="marksChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Page footer-->
+        <footer>
+            <div class="footerContainer">
+                <div class="footerTop">
+                    <div class="footerLinks">
+                        <p>info@wateraid.org</p>
+                        <p>+44 (0)20 7793 4500</p>
+                    </div>
+
+                    <div class="footerSocialMedia">
+                        <p>Follow us:</p>
+                        <a href="https://www.facebook.com/wateraid" class="fa fa-facebook"></a>
+                        <a href="https://www.twitter.com/wateraid" class="fa fa-twitter"></a>
+                        <a href="https://www.instagram.com/wateraid" class="fa fa-instagram"></a>
+                    </div>
+                </div>
+
+                <div class="footerBottom">
+                    <p>Designed by Group 067</p>
+                </div>
+            </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="js/myJs.js"></script>
+        <script src="js/donorJs.js"></script>
+    </body>
+</html>

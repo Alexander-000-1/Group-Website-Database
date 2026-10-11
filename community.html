@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+    <div class="headerContainer">
+        <div class="dropdownContainer">
+            <button>Pages</button>
+            <div class="dropdownContent">
+                <a href="index.html">Home</a>
+                <a href="waterPoint.html">Water Point</a>
+                <a href="donorRecords.html">Donor Records</a>
+                <a href="maintenanceReport.html">Maintenance Report</a>
+                <a href="construction.html">Construction</a>
+                <a href="community.html">Community</a>
+            </div>
+        </div>
+
+        <h1>Community</h1>
+
+    </div>
+    <div class="pageContentContainer">
+        <hr>
+        <p>The following page provides water data relating to a selected community, including water point types, changes
+            in water demand over time, and estimated versus actual water consumption.</p>
+        <hr>
+        <p>This search provides the number of active pumps per community, and displays what each pump type is. To see
+            pump information relating to your preferred community please enter the country name and community type
+            below:</p>
+        <form id="searchForm">
+            <div class="searchRow">
+                <div>
+            <label for="countrySearch">Search by Country:</label>
+            <input type="search" id="countrySearch" name="countrySearch" placeholder="Enter country:">
+                </div>
+            <div>
+            <label for="communityType">Select Community Type</label>
+            <select id="communityType" name="communityType">
+                <option value="" disabled selected>Select Type</option>
+                <option value="Urban">Urban</option>
+                <option value="Suburban">Suburban</option>
+                <option value="Rural">Rural</option>
+            </select>
+            </div>
+            <button type="submit">Search</button>
+            </div>
+        </form>
+
+        <div>
+            <p id="reportBanner">Enter a country and community type, then press Search.</p>
+            <div class="communitySection">
+                <table id="waterTable" border="1">
+                    <thead>
+                        <tr>
+                            <th>Hand Pumps</th>
+                            <th>Solar Pumps</th>
+                            <th>Diesel Pumps</th>
+                            <th>Electric Pumps</th>
+                            <th>Motorised Pumps</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr id="dataRow">
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="communitySection" style="margin-left: 20px;">
+                <div id="communityListOutput"></div>
+            </div>
+            <br>
+            <h3>Manage Communities:</h3>
+            <p>Use the form below to add a new community to the database, or select a community from the table shown
+                above and click "Edit" to update its details</p>
+            <p id="selectedCommunityText" class="muted"></p>
+            <form id="editForm">
+                <div class="form-row">
+                    <label for="editCountry">Country name</label>
+                    <input type="text" id="editCountry">
+                </div>
+
+                <div class="form-row">
+                    <label for="editCommunityType">Select Community Type</label>
+                    <select id="editCommunityType" name="communityType">
+                        <option value="" disabled selected>>Select Type</option>
+                        <option value="Urban">Urban</option>
+                        <option value="Suburban">Suburban</option>
+                        <option value="Rural">Rural</option>
+                    </select>
+                </div>
+                <button type="submit">Update Record</button>
+                <button type="button" id="addCommunityBtn">Add Community</button>
+            </form>
+            <div id="message" class="message"></div>
+
+        </div>
+
+        <hr>
+        <p>Please Note: In order to view chart data, please enter a community ID from the table shown above. Each
+            community has a unique ID which can be found in the Community ID column.</p>
+        <div style="display: inline-block; vertical-align: top; width: 48%;">
+            <h2>Change in Water Demand</h2>
+            <p>The following graph represents the change of water demand in relation to the population of the selected
+                community</p>
+            <form id="demandForm">
+                <input type="number" id="communityIdInput" placeholder="Enter Community ID:">
+                <button type="submit">Search</button>
+            </form>
+            <div id="demandOutput"></div>
+            <div class="chart-wrapper" style="height: 400px;">
+                <canvas id="demandChart"></canvas>
+            </div>
+        </div>
+        <div style="display: inline-block; vertical-align: top; width: 48%; margin-left: 2%;">
+            <h2>Consumption Analysis</h2>
+            <p>The following graph represents the estimated water consumption compared to the actual water consumption
+                of a given community.</p>
+            <form id="consumptionForm">
+                <input type="number" id="consumptionIdInput" placeholder="Enter Community ID:">
+                <button type="submit">Search</button>
+            </form>
+            <div id="consumptionOutput"></div>
+            <div class="chart-panel">
+                <div class="chart-wrapper" style="width: 600px; height: 400px;">
+                    <canvas id="secondChart"></canvas>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <footer>
+        <div class="footerContainer">
+            <div class="footerTop">
+                <div class="footerLinks">
+                    <p>info@wateraid.org</p>
+                    <p>+44 (0)20 7793 4500</p>
+                </div>
+
+                <div class="footerSocialMedia">
+                    <p>Follow us:</p>
+                    <a href="https://www.facebook.com/wateraid" class="fa fa-facebook"></a>
+                    <a href="https://www.twitter.com/wateraid" class="fa fa-twitter"></a>
+                    <a href="https://www.instagram.com/wateraid" class="fa fa-instagram"></a>
+                </div>
+            </div>
+
+            <div class="footerBottom">
+                <p>Designed by Group 067</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+   <script src="js/myJs.js"></script>
+    <script src="js/communityJs.js"></script>
+
+</body>
+
+</html>

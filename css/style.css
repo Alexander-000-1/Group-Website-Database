@@ -1,0 +1,760 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/*Header and dropdown css*/
+.headerContainer {
+    font-family: sans-serif;
+    position:sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: lightblue;
+    padding: 10px;
+    z-index: 1000;
+}
+
+
+.headerContainer h1 {
+    flex: 1;
+    text-align: center;
+    margin: 0;
+    padding: 10px;
+}
+
+.dropdownContainer {
+    position: relative;
+}
+
+.dropdownContainer button {
+    background-color: grey;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdownContainer a{
+    display: block;
+    color: black;
+    text-decoration: none;
+    padding: 10px 15px;
+}
+
+.dropdownContainer .dropdownContent button{
+    display: block;
+    color: black;
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 10px 15px;
+}
+
+.dropdownContainer .dropdownContent {
+    font-family: sans-serif;
+    display: none;
+    background-color: hsl(0, 0%, 95%);
+    position: absolute;
+    min-width: 100px;
+    box-shadow: 2px 2px 5px hsla(0, 0%, 0%, 0.8);
+}
+
+.dropdownContainer:hover .dropdownContent {
+    display: block;
+}
+
+.dropdownContainer:hover button {
+    background-color: hsl(0, 0%, 70%)
+}
+
+.dropdownContainer .dropdownContent button:hover,
+.dropdownContainer a:hover {
+    background-color: hsl(0, 0%, 90%)
+}
+
+/*page content css*/
+.pageContentContainer {
+    font-family: sans-serif;
+    padding-right: 100px;
+    padding-left: 100px;
+}
+
+/* about us */
+#aboutUsBox{
+    padding: 10px;
+    font-size: 14px;
+    margin: 25px;
+    font-family: sans-serif;
+    background: lightgrey;
+}
+
+/*footer css*/
+footer {
+    font-family: sans-serif;
+    background-color:lightgrey;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+.footerContainer {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.footerTop {
+    display: flex;
+}
+
+.footerLinks{
+    text-align: left;
+}
+
+.footerSocialMedia {
+    margin: 0 auto;
+}
+
+.footerBottom {
+    text-align: center;
+    font-size: 12px;
+}
+
+/* Water Point page*/
+.chart-wrapper {
+    max-width: 800px;
+    height: 400px;
+    margin: auto;
+}
+
+.output {
+    margin: auto;
+}
+
+select {
+    font: inherit;
+    padding: 5px;
+    padding-right: 5px;
+}
+
+.tableForm {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 5px;
+    width: 100%;
+}
+
+.tableOutput {
+    margin: 20px;
+    text-align: center;
+}
+
+.waterImages {
+    text-align: center;
+}
+
+.waterImages img {
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 5px 25px;
+}
+
+.errorMessage {
+
+    block-size: 20px;
+    background-color: rgb(245, 203, 203);
+    border: 1px solid #900000;
+    border-radius: 5px;
+    text-align: center;
+    color: #900000;
+}
+
+.hideButtons {
+    display: none
+}
+
+.tableOutput {
+    overflow: auto;
+    height: 300px;
+}
+
+.tableOutput th {
+    position: sticky;
+    top: 0; /*Makes the header stay at the top of the div*/
+    z-index: 1; /*Makes table go infront of header*/
+}
+/*Water Point page*/
+
+
+
+/*Donor Page */
+.formRow {
+  margin-bottom: 15px;
+}
+
+form {
+    font-family: sans-serif;
+}
+
+input{
+  padding: 5px;
+}
+
+#submitButton {
+   padding: 8px 15px;
+   border-radius: 5px;
+   border: none;
+   background-color: grey;
+   color: white;
+   cursor: pointer;
+}
+
+#submitButton:hover {
+    background-color: hsl(0, 0%, 70%);
+}
+
+label {
+    display: block;
+    margin-bottom: 4px;
+}
+
+.reportAndChartWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+.chartContainer {
+    min-height: 0px;
+    height: auto;
+}
+
+#marksChart {
+    width: 100%;
+    height: 100%;
+}
+
+.donorTableContainer, .report {
+    min-width: 350px;
+}
+
+.donorTableOutput {
+    margin: 0 auto;
+    width: fit-content;
+    margin-bottom: 50px;
+}
+
+.donorTableOutput button {
+    margin: 1px;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    background-color: grey;
+    color: white;
+    cursor: pointer;
+}
+
+.donorTableOutput button:hover {
+    background-color: hsl(0, 0%, 70%);
+}
+
+#tableOutput {
+    font-family: sans-serif;
+    padding: 0 5px 5px 5px;
+    border: 1px solid;
+    border-radius: 10px;
+    color: black;
+    background-color: lightgrey;
+    display: inline-block;
+    margin: 0 auto;
+    overflow: auto;
+    height: 300px;
+}
+
+#tableOutput th {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: lightgrey;    
+}
+
+#tableOutput table {
+    margin: 0 auto;
+}
+
+#tableOutput th {
+    border-bottom: 2px solid black;
+    padding: 10px;
+}
+
+#tableOutput td {
+    text-align: center;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+select {
+    font-family: sans-serif;
+    padding: 8px;
+    padding-right: 12px;
+}
+
+.tableForm {
+    display: grid;
+    grid-template-columns: 1fr 2fr; 
+    grid-gap: 5px;  
+    width: 100%; 
+}
+
+
+#reportOutput {
+    font-family: sans-serif;
+    padding: 0 5px 5px 5px;
+    border: 1px solid;
+    border-radius: 5px;
+    color: black;
+    background-color: lightgrey;
+    display: inline-block;
+    margin: 0 auto;
+    overflow: auto;
+    max-height: 300px;
+}
+
+#reportOutput table {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 100%;
+    table-layout:fixed;
+}
+
+#reportOutput th {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: lightgrey;  
+    border-bottom: 2px solid black;
+    padding: 10px;
+}
+
+#reportOutput td {
+    text-align: center;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.dropdown {
+    display: inline-block;
+}
+
+.dropdown button {
+    background-color: grey;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown button:hover {
+    background-color: hsl(0, 0%, 70%)
+}
+
+.dropdown a{
+    display: block;
+    color: black;
+    text-decoration: none;
+    padding: 10px 15px;
+}
+
+.dropdown .dropdownContent button{
+    font-family: sans-serif;
+    display: block;
+    color: black;
+    background: none;
+    border: none;
+    width: 100%;
+    padding: 10px 15px;
+}
+
+
+.dropdown .dropdownContent {
+    display: none;
+    background-color: hsl(0, 0%, 95%);
+    position: absolute;
+    min-width: 100px;
+    box-shadow: 2px 2px 5px hsla(0, 0%, 0%, 0.8);
+    z-index: 2;
+}
+
+.dropdown:hover .dropdownContent {
+    display: block;
+}
+
+.dropdown .dropdownContent button:hover {
+    background-color: hsl(0, 0%, 90%)
+}
+
+.dropdown a:hover {
+    background-color: hsl(0, 0%, 90%)
+}
+
+.edit-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: hsl(0, 0%, 90%);
+    border: 1px solid black;
+    padding: 20px;
+    z-index: 3;
+}
+
+.edit-popup button {
+    padding: 8px 15px;
+   border-radius: 5px;
+   border: none;
+   background-color: grey;
+   color: white;
+   cursor: pointer;
+}
+
+.edit-popup button:hover {
+    background-color: hsl(0, 0%, 70%);
+}
+
+/*Footer CSS*/
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-instagram{
+    background:#E1306C;
+  color: white;
+}
+
+/*Jamie CSS*/
+.communitySection {
+    display: inline-block;
+    vertical-align: top;
+    height: 200px;
+    overflow-y: auto;
+}
+#waterTable {
+    max-width: 400px;
+     height: 200px;
+}
+.searchRow {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+.searchRow div {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Constuction Page */
+
+/* fixed-height scrollable container for the table */
+.tableWrapper {
+    overflow: auto;
+    height: 300px;
+    border: 1px solid;
+    border-radius: 5px;
+    background-color: lightgrey;
+    padding: 0 5px 5px 5px;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: inherit;
+}
+
+.formRow input,
+.formRow select {
+    font-family: sans-serif;
+    font-size: 14px;
+    padding: 7px 10px;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    
+}
+
+.formRow input:focus,
+.formRow select:focus {
+    outline: none;
+    border-color: #555;
+}
+
+#constructionMessage {
+    margin-top: 10px;
+    font-size: 14px;
+    color: green;
+}
+
+td {
+    text-align: center;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+/* Maintenance Report Page*/
+/** Style for maintenance report table */
+
+#reportTableOutput table {
+  margin: 0 auto;
+}
+
+
+#reportTableOutput th {
+  border-bottom: 2px solid black;
+  padding: 10px;
+}
+
+#reportTableOutput td {
+  border: 1px solid black;
+  padding: 5px;
+}
+
+/** Style for bar chart */
+
+#displayReportGraph {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.chartMenu {
+  width: 100vw;
+  height: 40px;
+  background: #1A1A1A;
+  color: rgba(54, 162, 235, 1);
+}
+
+.chartMenu p {
+  padding: 10px;
+  font-size: 20px;
+}
+
+.chartCard {
+  width: 100vw;
+  height: calc(100vh - 40px);
+  background: rgba(54, 162, 235, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chartBox {
+  width: 700px;
+  padding: 20px;
+  border-radius: 20px;
+  border: solid 3px rgba(54, 162, 235, 1);
+  background: white;
+}
+
+#displayReportGraph {
+  width: 1280px;
+  max-width: 100%;
+  margin: 0;
+  height: 720px;
+  margin-top: 20px;
+}
+
+#report1BarChart {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+#report2BarChart {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+#report3BarChart {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.maintenanceDropdown {
+    display: inline-block;
+}
+
+.maintenanceDropdown button {
+    background-color: grey;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+}
+
+.maintenanceDropdown button:hover {
+    background-color: hsl(0, 0%, 70%)
+}
+
+.maintenanceDropdown a{
+    display: block;
+    color: black;
+    text-decoration: none;
+    padding: 10px 15px;
+}
+
+.maintenanceDropdown .maintenanceDropdownContent button{
+    font-family: sans-serif;
+    display: block;
+    color: black;
+    background: none;
+    border: none;
+    width: 100%;
+    padding: 10px 15px;
+}
+
+.maintenanceDropdown .maintenanceDropdownContent {
+    display: none;
+    background-color: hsl(0, 0%, 95%);
+    position: absolute;
+    min-width: 100px;
+    box-shadow: 2px 2px 5px hsla(0, 0%, 0%, 0.8);
+}
+
+.maintenanceDropdown:hover .maintenanceDropdownContent {
+    display: block;
+}
+
+.maintenanceDropdown a:hover {
+    background-color: hsl(0, 0%, 90%)
+}
+
+.maintenanceDropdown .maintenanceDropdownContent button:hover {
+    background-color: hsl(0, 0%, 90%)
+}
+
+.maintenanceDropdown .maintenanceDropdownContent a:hover {
+    background-color: hsl(0, 0%, 90%)
+}
+
+.hidden {
+  display: none;
+}
+
+.reportTableOutput {
+    margin: 0 auto;
+    width: fit-content;
+    margin-bottom: 50px;
+}
+
+#reportTableOutput button {
+    margin: 1px;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    background-color: grey;
+    color: white;
+    cursor: pointer;
+}
+
+#reportTableOutput button:hover {
+    background-color: hsl(0, 0%, 70%);
+}
+
+#reportTableOutput {
+    font-family: sans-serif;
+    padding: 0 5px 5px 5px;
+    border: 1px solid;
+    border-radius: 10px;
+    color: black;
+    background-color: lightgrey;
+    display: inline-block;
+    margin: 0 auto;
+    overflow: auto;
+    height: 300px;
+}
+
+#reportTableOutput th {
+    position: sticky;
+    top: 0; /*Makes the header stay at the top of the div*/
+    z-index: 1; /*Makes table go infront of header*/
+    background-color: lightgrey;    
+}
+
+#reportTableOutput table {
+    margin: 0 auto;
+}
+
+#reportTableOutput th {
+    border-bottom: 2px solid black;
+    padding: 10px;
+}
+
+#reportTableOutput td {
+    text-align: center;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.edit-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: hsl(0, 0%, 90%);
+    border: 1px solid black;
+    padding: 20px;
+    z-index: 3;
+}
+
+.message {
+    display: none;
+}
+
+.message.error {
+    display: block;
+    color: red;
+}
+
+.message.success {
+    display: block;
+    color: green;
+}
+
+/* Styling for graph button, quick fix */
+
+#enterGraphYears button,
+#enterGraphCommunity button {
+    margin: 1px;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    background-color: grey;
+    color: white;
+    cursor: pointer;
+}
+
+#enterGraphYears button:hover,
+#enterGraphCommunity button:hover {
+    background-color: hsl(0, 0%, 70%);
+}

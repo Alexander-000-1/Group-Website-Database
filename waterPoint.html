@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Point</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+    <div class="headerContainer">
+        <div class="dropdownContainer">
+            <button>Pages</button>
+            <div class="dropdownContent">
+                <a href="index.html">Home</a>
+                <a href="waterPoint.html">Water Point</a>
+                <a href="donorRecords.html">Donor Records</a>
+                <a href="maintenanceReport.html">Maintenance Report</a>
+                <a href="construction.html">Construction</a>
+                <a href="community.html">Community</a>
+            </div>
+
+        </div>
+        <h1>Water Point</h1>
+    </div>
+
+
+
+    <!--How we will add, remove and edit water points is still to be decided -->
+    <div class="pageContentContainer">
+        <h2>Search for Water Point</h2>
+        <p>Choose to search for water point using input values or display all</p>
+        <hr>
+        <select id="displayMenu" onchange="changeDisplay()">
+            <option value="Search">Search for water point</option>
+            <option value="Display">Display all</option>
+        </select>
+        <hr>
+        <br>
+
+        <div class="tableForm">
+            <div id="inputArea">
+                <form id="searchForm">
+                    <input type="text" id="countrySearch" name="countrySearch" placeholder="Enter Country:">
+                    <br>
+                    <br>
+                    <select id="communitySearch" name="communitySearch">
+                        <option value="" disabled selected>Select Community Type</option>
+                        <option value="Urban">Urban</option>
+                        <option value="Suburban">Suburban</option>
+                        <option value="Rural">Rural</option>
+                    </select>
+                    <br>
+                    <br>
+                    <button type="submit"> Enter</button>
+                </form>
+                <br>
+                <div id="errorMessage"></div>
+            </div>
+            <div class="tableOutput" id="tableOutput">
+                <table>
+                    <tr>
+                        <th>Year</th>
+                        <th>Water Point ID</th>
+                        <th>Water Point Type</th>
+                        <th>Water Quality</th>
+                        <th>Country</th>
+                        <th>Total Population</th>
+                        <th>Litres of water pumped</th>
+                        <th>Litres of water consumed</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <br>
+        <div class="waterImages">
+            <img src="images/HandPump.jpg" title="Hand Pump">
+            <img src="images/DieselPump.png" title="Diesel Pump">
+            <img src="images/ElectricPump.jpg" title="Electric Pump">
+            <img src="images/MotorisedPump.jpg" title="Motorised Pump">
+            <img src="images/RopePump.png" title="Rope Pump">
+            <img src="images/SolarPump.jpg" title="Solar Pump">
+        </div>
+        <p>Enter the year to show percentage of population with clean water access</p>
+        <hr>
+        <br>
+        <form id="selectForm">
+            <input type="text" id="countrySelect" name="countrySelect" placeholder="Enter Country:">
+            <br>
+            <br>
+            <input type="number" id="yearSelect" name="yearSelect" placeholder="Enter Year:">
+            <br>
+            <br>
+            <button type="submit"> Enter</button>
+        </form>
+        <br>
+
+        <div id="percentageChartOutput" class="output"></div>
+        <div class="chart-panel" id = "percentageChartDisplay">
+            <div class="chart-wrapper">
+                <canvas id="percentageChart"></canvas>
+            </div>
+        </div>
+    </div>
+    <br>
+    <hr>
+
+    <footer>
+        <div class="footerContainer">
+            <div class="footerTop">
+                <div class="footerLinks">
+                    <p>info@wateraid.org</p>
+                    <p>+44 (0)20 7793 4500</p>
+                </div>
+
+                <div class="footerSocialMedia">
+                    <p>Follow us:</p>
+                    <a href="https://www.facebook.com/wateraid" class="fa fa-facebook"></a>
+                    <a href="https://www.twitter.com/wateraid" class="fa fa-twitter"></a>
+                    <a href="https://www.instagram.com/wateraid" class="fa fa-instagram"></a>
+                </div>
+            </div>
+
+            <div class="footerBottom">
+                <p>Designed by Group 067</p>
+            </div>
+        </div>
+    </footer>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/myJs.js"></script>
+    <script src="js/waterPointJs.js"></script>
+
+</body>
+
+</html>
